@@ -22,6 +22,7 @@ def selection_sort(arr, size):
             if arr[i] < arr[min_idx]:
                 min_idx = i
         (arr[step], arr[min_idx]) = (arr[min_idx], arr[step])
+    return arr
 
 
 def print_list(arr, size):
@@ -44,16 +45,14 @@ if __name__ == "__main__":
 #Space complexity: O(1)
 
 def insertion_sort(arr):
-
-    for step in range(1, len(arr)):
-        key = arr[step]
-        j = step - 1
-                
-        while j >= 0 and key < arr[j]:
-            arr[j + 1] = arr[j]
-            j = j - 1
-        
-        arr[j + 1] = key
+  for step in range(1, len(arr)):
+    key = arr[step]
+    j = step - 1
+    while j >= 0 and key < arr[j]:
+      arr[j + 1] = arr[j]
+      j = j - 1
+      arr[j + 1] = key
+  return arr
 
 
 if __name__ == "__main__":
@@ -68,13 +67,14 @@ if __name__ == "__main__":
 #bubble_sort
 #time complexity: O(n^2)
 #Space complexity: O(1)
-  def bubble_sort(arr):
-    for i in range(len(array)):
-      for j in range(0, len(array) - i - 1):
-        if array[j] > array[j + 1]:
-          temp = array[j]
-          array[j] = array[j+1]
-          array[j+1] = temp
+def bubble_sort(arr):
+  for i in range(len(arr)):
+    for j in range(0, len(arr) - i - 1):
+      if arr[j] > arr[j + 1]:
+        temp = arr[j]
+        arr[j] = arr[j+1]
+        arr[j+1] = temp
+  return arr
 
 if __name__ == "__main__":
   print("generating int list...")
